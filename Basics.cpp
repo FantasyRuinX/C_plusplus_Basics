@@ -4,18 +4,16 @@
 
 using namespace std;
 
-string name;
+string name,formula;
+string formulaSplit[100];
 
 void getName(){
     getline(cin,name);
 }
 
-void calFormula(){
-    string formula,temp,split;
+void subString(){
+    string temp;
     int index = 0;
-    string formulaSplit[100];
-
-    getline(cin,formula);
 
     istringstream stream(formula);
 
@@ -23,7 +21,17 @@ void calFormula(){
         formulaSplit[index++] = temp;
     }
 
-    for (int i = 0; i < index; i++) {
+}
+
+void calFormula(){
+    string temp;
+    int index = 0;
+
+    getline(cin,formula);
+
+    subString();
+
+    for (int i = 0; i <= formulaSplit->length() + 1; i++) {
         cout << formulaSplit[i] << endl;
     }
 
