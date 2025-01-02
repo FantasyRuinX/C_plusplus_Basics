@@ -3,7 +3,9 @@
 #include <string>
 #include <format>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::string;
 
 string name,formula;
 string formulaSplit[3];
