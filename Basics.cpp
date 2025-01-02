@@ -6,7 +6,7 @@
 using namespace std;
 
 string name,formula;
-string formulaSplit[100];
+string formulaSplit[3];
 
 
 void subString(){
@@ -26,11 +26,12 @@ void calFormula(){
     int index = 0;
 
     int num0 = 0,num1 = 0;
+    int array_size = sizeof(formulaSplit) / sizeof(formulaSplit[0]);
 
     getline(cin,formula);
     subString();
 
-    for (int i = 0; i <= formulaSplit->length() + 1; i++) {
+    for (int i = 0; i <= array_size; i++) {
         string temp = formulaSplit[i];
         bool isNum = isdigit(temp[0]);
 
@@ -41,11 +42,11 @@ void calFormula(){
         }
     }
 
-
     if (formulaSplit[1] == "+"){ cout << num0 << " + " << num1 << " = " << (num0 + num1) << endl;}
     else if (formulaSplit[1] == "-"){ cout << num0 << " - " << num1 << " = " << (num0 - num1) << endl;}
     else if (formulaSplit[1] == "*"){ cout << num0 << " * " << num1 << " = " << (num0 * num1) << endl;}
     else if (formulaSplit[1] == "/"){ cout << num0 << " / " << num1 << " = " << (num0 / num1) << endl;}
+
 }
 
 int main()
